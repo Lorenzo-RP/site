@@ -4,60 +4,92 @@
   padding: 0;
   box-sizing: border-box;
 }
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 
 body {
   font-family: Arial, sans-serif;
   background-color: white;
   color: black;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 h1, h2, p {
   font-family: Arial, sans-serif;
+  display: flex;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+  display: flex;
 }
 
 /* Cabeçalho */
-header {
+header.hero-header {
   background-color: #021f3b;
   color: white;
-  text-align: center;
-  padding: 1.5rem 0;
+  border-bottom: 4px solid orange;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: left;
+  gap: 1rem;
+  position: relative;
+  min-height: 420px;
 }
+.header-content {
+  flex: 1;
+  min-width: 250px;
+}
+.logo-img {
+  max-width: 300px;
+}
+
+
 
 .center {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   text-align: center;
-  flex-wrap: wrap; /* Adicionado para adaptação no mobile */
-  gap: 8px; /* Para dar espaçamento entre os itens */
+  gap: 8px;
+  padding: 1rem;
 }
 
 header img {
   max-width: 150px;
   margin-bottom: 1rem;
+  display: flex;
 }
 
 header h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
+  display: flex;
 }
 
 header p {
   font-size: 1.1rem;
+  display: flex;
 }
 
 /* Container principal */
 .container {
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Botões */
@@ -68,13 +100,15 @@ header p {
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 1rem 0;
   transition: background 0.3s ease-in-out;
 }
 
 .cta-button:hover {
-  background-color: #e65c00;
+  background-color: #127c37;
 }
 
 /* Depoimentos */
@@ -84,6 +118,8 @@ header p {
   margin: 1rem 0;
   padding: 1rem;
   animation: fadeIn 1.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes fadeIn {
@@ -97,6 +133,43 @@ header p {
   }
 }
 
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.porcofinal2-img {
+  position: absolute;
+  bottom: -16px;
+  right: 0;
+  max-width: 50%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+  border-top-left-radius: 180px;
+  border-bottom-left-radius: 180px;
+  overflow: hidden;
+  animation: fadeInRight 1s ease-out;
+}
+
+.porcofinal2-img::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(2, 31, 59, 1), rgba(2, 31, 59, 0));
+  z-index: 10;
+}
+
 /* Rodapé */
 footer {
   background-color: #021f3b;
@@ -104,39 +177,51 @@ footer {
   text-align: center;
   font-size: 0.9rem;
   padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 footer img {
   width: 120px;
   height: auto;
   margin-top: 20px;
+  display: flex;
 }
 
 .socials a {
   color: white;
   margin: 0 10px;
   text-decoration: none;
+  display: flex;
 }
 
 .image-footer {
   width: 150px;
   margin-top: -1px;
-  display: block;
+  display: flex;
 }
 
 /* Bolhas de destaque */
 .highlight-bubble {
-  background-color: #c67256;
+  background-color: rgb(225, 146, 0);
   color: white;
-  display: inline-block;
-  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(0.5rem, 1.5vw, 0.8rem) clamp(1rem, 3vw, 1.5rem);
   border-radius: 20px;
   font-weight: bold;
   text-transform: capitalize;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
-  white-space: nowrap;
+  font-size: clamp(0.8rem, 2.5vw, 1.1rem);
+  width: 280px; /* Define um tamanho fixo */
+  word-wrap: break-word;
+  text-align: center;
 }
+
 
 .highlight-bubble:hover {
   transform: scale(1.1);
@@ -145,36 +230,49 @@ footer img {
 /* Imagens porcos/frangos */
 .chessboard-row {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   margin-bottom: 12px;
   gap: 8px;
-  flex-wrap: wrap;
+}
+
+.chessboard-item {
+  display: flex;
 }
 
 .chessboard-item p {
   margin: 0;
+  display: flex;
+  max-width: 100%;
+}
+
+.img-porcos img,
+.img-frangos img,
+.image-sistema-img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: auto;
+  display: flex;
 }
 
 .img-porcos img {
-  width: 100%;
-  max-width: 200px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 160px;
 }
 
 .img-frangos img {
-  width: 100%;
-  max-width: 300px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
 }
 
 .text-porcos,
-.text-frangos {
-  padding: 12px;
-  font-size: 16px;
-  margin-left: 16px;
+.text-frangos,
+.text_sistema {
+  padding: 8px;
+  font-size: 15px;
+  margin-left: 8px;
   flex: 1;
+  display: flex;
 }
 
 .text-porcos {
@@ -190,11 +288,11 @@ footer img {
 /* Bloco sistema */
 .image-sistema {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
   margin: 24px 0;
-  flex-wrap: wrap;
 }
 
 .text_sistema {
@@ -207,13 +305,12 @@ footer img {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   min-width: 280px;
   margin: 0;
+  display: flex;
 }
 
 .image-sistema-img {
-  width: 100%;
-  max-width: 280px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 35%;
+  display: flex;
 }
 
 /* Imagens finais */
@@ -223,71 +320,96 @@ footer img {
   gap: 12px;
   margin: 20px 0;
   flex-wrap: wrap;
+  
 }
 
 .porcofinal-img {
-  max-width: 140px;
+  max-width: 1px;
   width: 100%;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
 }
 
-/* ============ MOBILE RESPONSIVE ============ */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 1.6rem;
+/* ============ MOBILE FIRST ============ */
+@media (max-width: 1200px) {
+  header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 1rem 0 1rem; /* tiramos o espaço de cima */
+    position: relative;
+    height: 180px;
+    margin: 0;
+    margin-top: 0;
+    padding-top: 0;
+ 
+    
   }
 
-  header p {
-    font-size: 1rem;
+  .logo-img {
+    max-width: 200px;
+    height: auto;
+    z-index: 3;
+    flex-shrink: 0;
+    align-self: flex-end;
+    margin-bottom: 0;
+    margin-right: auto; /* joga totalmente pra esquerda */
+  }
+
+  .header-content {
+    display: none;
+  }
+
+  .porcofinal2-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 65%;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+    border-top-left-radius: 120px;
+    border-bottom-left-radius: 120px;
+    overflow: hidden;
+    animation: fadeInRight 1s ease-out;
+    margin-bottom: 0; /* garante que encoste na linha */
+  }
+
+  .porcofinal2-img::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(2, 31, 59, 1), rgba(2, 31, 59, 0));
+    z-index: 2;
   }
 
   .cta-button {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.95rem;
-  }
-
-  .chessboard-row,
-  .image-sistema {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
+    padding: 0.7rem 1.3rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
   }
 
   .text-porcos,
   .text-frangos,
   .text_sistema {
     padding: 8px;
-    font-size: 15px;
+    font-size: 14px;
     margin-left: 0;
-    width: 100%;
-  }
-
-  .img-porcos img {
-    max-width: 100%;
-  }
-
-  .img-frangos img {
-    max-width: 100%;
   }
 
   .image-sistema-img {
-    max-width: 100%;
+    max-width: 300px;
   }
 
   .porcofinal-img {
-    max-width: 100px;
-  }
-
-  .center {
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 6px;
-  }
-
-  .highlight-bubble {
-    font-size: 0.8rem;
-    padding: 6px 12px;
+    position: static;
+    max-width: 200px;
+    margin: 0 auto;
   }
 }
+
+
