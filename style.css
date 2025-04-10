@@ -459,3 +459,54 @@ footer img {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* opcional pra dar destaque */
   
 }
+
+.speech-bubble {
+  position: relative;
+  background-color: #021f3b;
+  color: white;
+  font-size: 18px;
+  line-height: 50px; /* igual à altura */
+  padding: 0 20px;
+  border-radius: 10px;
+  width: 220px;
+  height: 50px;
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.speech-bubblemonitor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* espaço entre ícone e texto */
+  position: relative;
+  background-color: #021f3b;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 220px;
+  height: 50px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
+
+.speech-bubblecli {
+  position: relative;
+  background-color: #021f3b;
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 220px;
+  height: 50px;
+  display: flex;
+  align-items: center;        /* Alinha verticalmente */
+  justify-content: center;    /* Alinha horizontalmente */
+  gap: 8px;                   /* Espaço entre ícone e texto */
+  text-align: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+}
