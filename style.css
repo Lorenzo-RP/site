@@ -115,7 +115,7 @@ header.hero-header {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: left;
   gap: 8px;
   padding: 1rem;
 }
