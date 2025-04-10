@@ -302,33 +302,29 @@ footer img {
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
-    padding: 0; /* tira qualquer padding que empurre a imagem */
+    padding: 0;
     margin: 0;
     height: 180px;
     min-height: unset;
-    gap: 0;
     background-color: #021f3b;
     border-bottom: 4px solid orange;
     position: relative;
-    overflow: hidden; /* evita qualquer transbordo indesejado */
+    overflow: hidden;
   }
   
+  
   .porcofinal2-img {
-    position: absolute;
-    bottom: 0;
-    right: -35%; /* Agora vai encostar 100% na direita */
-    width: auto;
+    max-width: 95%; /* só ocupa o espaço restante */
     height: 100%;
-    max-width: none;
-    z-index: 1;
+    object-fit: cover;
+    object-position: left;
+    align-self: flex-end;
     margin: 0;
     padding: 0;
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
   }
   
-  
-
   .logo-img {
     max-width: 200px;
     height: auto;
@@ -336,6 +332,7 @@ footer img {
     margin: 0;
     padding: 0;
   }
+  
 
   .header-content {
     display: none;
@@ -344,10 +341,27 @@ footer img {
   
 
   .porcofinal-img {
-    max-width: 30%;
+    max-width: 43%;
     width: 100%;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
 
+}
+
+.image-sistema-img {
+  max-width: 80%;
+  margin: 0 auto;              /* Centraliza horizontalmente */
+  display: block;              /* block necessário para margin auto funcionar */
+  border-radius: 16px;         /* Borda arredondada */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra opcional pra destacar */
+}
+
+.img-frangos img {
+  max-width: 80%;
+  width: 90%;
+  margin: 0 auto;
+  display: block;        /* Necessário pra margin auto funcionar */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* opcional pra dar destaque */
 }
