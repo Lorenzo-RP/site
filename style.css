@@ -1,14 +1,9 @@
-/* Reset geral */
+/* ============ RESET E BASE ============ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
 
 body {
   font-family: Arial, sans-serif;
@@ -19,18 +14,23 @@ body {
   flex-direction: column;
 }
 
-h1, h2, p {
-  font-family: Arial, sans-serif;
-  display: flex;
-}
-
 a {
   text-decoration: none;
   color: inherit;
-  display: flex;
 }
 
-/* Cabeçalho */
+h1, h2, p {
+  font-family: Arial, sans-serif;
+}
+
+/* ============ CONTAINER GLOBAL ============ */
+.product-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============ HEADER MOBILE FIRST ============ */
 header.hero-header {
   background-color: #021f3b;
   color: white;
@@ -39,87 +39,54 @@ header.hero-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  text-align: left;
   gap: 1rem;
   position: relative;
   min-height: 420px;
 }
+
+.logo-img {
+  max-width: 250px;
+  height: auto;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
 .header-content {
   flex: 1;
-  min-width: 250px;
-}
-.logo-img {
-  max-width: 300px;
+  text-align: left; /* centraliza entre logo e imagem */
 }
 
-
-
-.center {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 8px;
-  padding: 1rem;
+.porcofinal2-img {
+  max-width: 35%;
+  height: auto;
+  margin-left: auto; /* empurra pra direita */
+  border-top-left-radius: 180px;
+  border-bottom-left-radius: 180px;
+  overflow: hidden;
+  animation: fadeInRight 1s ease-out;
 }
 
-header img {
-  max-width: 150px;
-  margin-bottom: 1rem;
-  display: flex;
+.porcofinal2-img::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(2, 31, 59, 1), rgba(2, 31, 59, 0));
+  z-index: 2;
 }
 
-header h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  display: flex;
-}
-
-header p {
-  font-size: 1.1rem;
-  display: flex;
-}
-
-/* Container principal */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Botões */
-.cta-button {
-  background-color: #4f9728;
-  color: white;
-  padding: 1rem 2.5rem;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem 0;
-  transition: background 0.3s ease-in-out;
-}
-
-.cta-button:hover {
-  background-color: #127c37;
-}
-
-/* Depoimentos */
-.testimonial {
-  background-color: #f2f1f1;
-  border-left: 5px solid #021f3b;
-  margin: 1rem 0;
-  padding: 1rem;
-  animation: fadeIn 1.5s ease-in-out;
-  display: flex;
-  flex-direction: column;
+/* ============ ANIMAÇÕES ============ */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes fadeIn {
@@ -133,159 +100,78 @@ header p {
   }
 }
 
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(60px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.porcofinal2-img {
-  position: absolute;
-  bottom: -16px;
-  right: 0;
-  max-width: 50%;
-  height: 100%;
-  z-index: 5;
-  pointer-events: none;
-  border-top-left-radius: 180px;
-  border-bottom-left-radius: 180px;
-  overflow: hidden;
-  animation: fadeInRight 1s ease-out;
-}
-
-.porcofinal2-img::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 120px;
-  height: 100%;
-  background: linear-gradient(to right, rgba(2, 31, 59, 1), rgba(2, 31, 59, 0));
-  z-index: 10;
-}
-
-/* Rodapé */
-footer {
-  background-color: #021f3b;
-  color: white;
-  text-align: center;
-  font-size: 0.9rem;
-  padding: 1rem 0;
+/* ============ CONTEÚDO GERAL ============ */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.center {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 1rem;
 }
 
-footer img {
-  width: 120px;
-  height: auto;
-  margin-top: 20px;
-  display: flex;
-}
-
-.socials a {
+/* ============ BOTÕES ============ */
+.cta-button {
+  background-color: #4f9728;
   color: white;
-  margin: 0 10px;
-  text-decoration: none;
+  padding: 1rem 2.5rem;
+  border-radius: 5px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+  transition: background 0.3s ease-in-out;
   display: flex;
 }
 
-.image-footer {
-  width: 150px;
-  margin-top: -1px;
-  display: flex;
+.cta-button:hover {
+  background-color: #127c37;
 }
 
-/* Bolhas de destaque */
+/* ============ DEPOIMENTOS ============ */
+.testimonial {
+  background-color: #f2f1f1;
+  border-left: 5px solid #021f3b;
+  margin: 1rem 0;
+  padding: 1rem;
+  animation: fadeIn 1.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============ BOLHAS DE DESTAQUE ============ */
 .highlight-bubble {
   background-color: rgb(225, 146, 0);
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(0.5rem, 1.5vw, 0.8rem) clamp(1rem, 3vw, 1.5rem);
+  padding: 0.6rem 1rem;
   border-radius: 20px;
   font-weight: bold;
   text-transform: capitalize;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
-  font-size: clamp(0.8rem, 2.5vw, 1.1rem);
-  width: 280px; /* Define um tamanho fixo */
-  word-wrap: break-word;
+  font-size: 1rem;
+  width: 280px;
   text-align: center;
 }
-
 
 .highlight-bubble:hover {
   transform: scale(1.1);
 }
 
-/* Imagens porcos/frangos */
-.chessboard-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 12px;
-  gap: 8px;
-}
-
-.chessboard-item {
-  display: flex;
-}
-
-.chessboard-item p {
-  margin: 0;
-  display: flex;
-  max-width: 100%;
-}
-
-.img-porcos img,
-.img-frangos img,
-.image-sistema-img {
-  width: 100%;
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  height: auto;
-  display: flex;
-}
-
-.img-porcos img {
-  max-width: 160px;
-}
-
-.img-frangos img {
-  max-width: 90%;
-}
-
-.text-porcos,
-.text-frangos,
-.text_sistema {
-  padding: 8px;
-  font-size: 15px;
-  margin-left: 8px;
-  flex: 1;
-  display: flex;
-}
-
-.text-porcos {
-  background-color: #f0f8ff;
-  border-left: 4px solid #4CAF50;
-}
-
-.text-frangos {
-  background-color: #fffaf0;
-  border-left: 4px solid #FF9800;
-}
-
-/* Bloco sistema */
+/* ============ SISTEMA ============ */
 .image-sistema {
   display: flex;
   flex-wrap: wrap;
@@ -305,7 +191,6 @@ footer img {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   min-width: 280px;
   margin: 0;
-  display: flex;
 }
 
 .image-sistema-img {
@@ -313,103 +198,146 @@ footer img {
   display: flex;
 }
 
-/* Imagens finais */
+/* ============ BLOCOS PORCOS E FRANGOS ============ */
+.chessboard-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 8px;
+}
+
+.img-porcos img {
+  max-width: 160px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.img-frangos img {
+  max-width: 90%;
+  width: 100%;
+  border-radius: 12px;
+}
+
+.text-porcos,
+.text-frangos,
+.text_sistema {
+  padding: 8px;
+  font-size: 15px;
+  margin-left: 8px;
+  flex: 1;
+}
+
+.text-porcos {
+  background-color: #f0f8ff;
+  border-left: 4px solid #4CAF50;
+}
+
+.text-frangos {
+  background-color: #fffaf0;
+  border-left: 4px solid #FF9800;
+}
+
+/* ============ IMAGENS FINAIS ============ */
 .porcofinal-container {
   display: flex;
   justify-content: center;
   gap: 12px;
   margin: 20px 0;
   flex-wrap: wrap;
-  
 }
 
 .porcofinal-img {
-  max-width: 1px;
+  max-width: 300px;
   width: 100%;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  display: flex;
 }
 
-/* ============ MOBILE FIRST ============ */
-@media (max-width: 1200px) {
-  header {
-    display: flex;
+/* ============ RODAPÉ ============ */
+footer {
+  background-color: #021f3b;
+  color: white;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+footer img {
+  width: 120px;
+  height: auto;
+  margin-top: 20px;
+}
+
+.socials a {
+  color: white;
+  margin: 0 10px;
+}
+
+.image-footer {
+  width: 150px;
+  margin-top: -1px;
+}
+
+/* ============ MEDIA QUERIES ============ */
+@media (max-width: 768px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  header.hero-header {
+    flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
-    padding: 0 1rem 0 1rem; /* tiramos o espaço de cima */
-    position: relative;
-    height: 180px;
+    padding: 0 1rem;
     margin: 0;
-    margin-top: 0;
-    padding-top: 0;
- 
-    
+    height: 180px;
+    min-height: unset;
+    gap: 0;
+    background-color: #021f3b;
+    border-bottom: 4px solid orange;
   }
 
   .logo-img {
     max-width: 200px;
     height: auto;
-    z-index: 3;
-    flex-shrink: 0;
     align-self: flex-end;
-    margin-bottom: 0;
-    margin-right: auto; /* joga totalmente pra esquerda */
+    margin: 0;
+    padding: 0;
   }
 
   .header-content {
     display: none;
   }
 
+  
+
   .porcofinal2-img {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    max-width: 65%;
+    position: relative;
+    max-width: 60%;
     height: auto;
-    z-index: 1;
-    pointer-events: none;
-    border-top-left-radius: 120px;
-    border-bottom-left-radius: 120px;
-    overflow: hidden;
-    animation: fadeInRight 1s ease-out;
-    margin-bottom: 0; /* garante que encoste na linha */
+    align-self: flex-end;
+    margin: 0;
+    padding: 0;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
   }
 
-  .porcofinal2-img::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100px;
-    height: 100%;
-    background: linear-gradient(to right, rgba(2, 31, 59, 1), rgba(2, 31, 59, 0));
-    z-index: 2;
-  }
 
-  .cta-button {
-    padding: 0.7rem 1.3rem;
-    font-size: 0.9rem;
-    border-radius: 4px;
-  }
 
-  .text-porcos,
-  .text-frangos,
-  .text_sistema {
-    padding: 8px;
-    font-size: 14px;
-    margin-left: 0;
-  }
-
-  .image-sistema-img {
-    max-width: 300px;
-  }
 
   .porcofinal-img {
-    position: static;
-    max-width: 200px;
-    margin: 0 auto;
+    max-width: 30%;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
+
 }
-
-
