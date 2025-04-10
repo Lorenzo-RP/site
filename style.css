@@ -286,6 +286,11 @@ footer img {
 
 /* ============ MEDIA QUERIES ============ */
 @media (max-width: 768px) {
+  .colaborador img{
+    width: 30%;
+  }
+
+
   html, body {
     margin: 0;
     padding: 0;
@@ -293,17 +298,36 @@ footer img {
   }
 
   header.hero-header {
+    display: flex;
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
-    padding: 0 1rem;
+    padding: 0; /* tira qualquer padding que empurre a imagem */
     margin: 0;
     height: 180px;
     min-height: unset;
     gap: 0;
     background-color: #021f3b;
     border-bottom: 4px solid orange;
+    position: relative;
+    overflow: hidden; /* evita qualquer transbordo indesejado */
   }
+  
+  .porcofinal2-img {
+    position: absolute;
+    bottom: 0;
+    right: -35%; /* Agora vai encostar 100% na direita */
+    width: auto;
+    height: 100%;
+    max-width: none;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+  }
+  
+  
 
   .logo-img {
     max-width: 200px;
@@ -318,20 +342,6 @@ footer img {
   }
 
   
-
-  .porcofinal2-img {
-    position: relative;
-    max-width: 60%;
-    height: auto;
-    align-self: flex-end;
-    margin: 0;
-    padding: 0;
-    border-top-left-radius: 100px;
-    border-bottom-left-radius: 100px;
-  }
-
-
-
 
   .porcofinal-img {
     max-width: 30%;
