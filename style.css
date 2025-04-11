@@ -394,56 +394,40 @@ footer img {
   transform: scale(1.03);
 }
 
-
-.speech-bubble {
-  position: relative;
-  background-color: #021f3b;
-  color: white;
-  font-size: 18px;
-  line-height: 50px; /* igual à altura */
-  padding: 0 20px;
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Poppins', sans-serif;
-}
-
-
-.speech-bubblemonitor {
+.section-divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px; /* espaço entre ícone e texto */
-  position: relative;
-  background-color: #021f3b;
-  color: white;
-  font-size: 18px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin: 40px 0 20px;
+  gap: 0.5rem;
+  font-size: 24px;        /* aplica tamanho uniforme */
+  color: #021f3b;         /* cor aplicada no container inteiro */
+  font-weight: bold;
 }
 
-.speech-bubblecli {
-  position: relative;
-  background-color: #021f3b;
-  color: white;
-  font-size: 18px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  width: 100%;
-  height: 100%;
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 3px solid #021f3b;
+}
+
+.section-divider::before {
+  margin-right: 1rem;
+}
+
+.section-divider::after {
+  margin-left: 1rem;
+}
+
+.section-divider span {
+  white-space: nowrap;
+}
+
+.section-divider i {
   display: flex;
-  align-items: center;        /* Alinha verticalmente */
-  justify-content: center;    /* Alinha horizontalmente */
-  gap: 8px;                   /* Espaço entre ícone e texto */
-  text-align: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Poppins', sans-serif;
+  align-items: center;
 }
 
 
@@ -614,29 +598,39 @@ footer img {
       display: block;              /* block necessário para margin auto funcionar */
       border-radius: 16px;         /* Borda arredondada */
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra opcional pra destacar */
-      margin-top: -45px;   /* espaçamento em cima */
+      margin-top: -25px;   /* espaçamento em cima */
     }
 
-    .speech-bubble,
-    .speech-bubblemonitor,
-    .speech-bubblecli {
-      position: relative;
-      background-color: #021f3b;
-      color: white;
-      font-size: 18px;
-      padding: 10px 20px;
-      border-radius: 1px;
-      height: 50px;
-      width: 100%; /* Agora ocupa toda a largura do container */
-      text-align: center;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-      font-family: 'Poppins', sans-serif;
+    .section-divider {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
-      box-sizing: border-box; /* Garante que o padding seja incluído no tamanho total */
+      text-align: center;
+      margin: 40px 0 20px;
     }
+
+    .section-divider::before,
+    .section-divider::after {
+      content: "";
+      flex: 1;
+      border-bottom: 3px solid #007BFF; /* linha azul mais grossa */
+    }
+
+    .section-divider:not(:empty)::before {
+      margin-right: 1rem;
+    }
+
+    .section-divider:not(:empty)::after {
+      margin-left: 1rem;
+    }
+
+    .section-divider span {
+      font-weight: bold;
+      font-size: 16px;
+      color: #021f3b;
+      white-space: nowrap;
+    }
+
+
     .caixazulg {
       display: block;
       width: 90%;
@@ -645,5 +639,21 @@ footer img {
       margin-bottom: 20px;
       border-radius: 8px;
     }
+    .section-divider {
+      font-size: 18px;
+      gap: 0.3rem;
+      margin: 30px 0 16px;
+    }
+  
+    .section-divider::before,
+    .section-divider::after {
+      border-bottom: 2px solid #021f3b;
+    }
+  
+
+
+
+
+
     }
   
