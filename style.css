@@ -65,8 +65,8 @@ header.hero-header {
   max-width: 35%;
   height: 100%;
   object-fit: cover;
-  border-top-left-radius: 180px;
-  border-bottom-left-radius: 180px;
+  /*border-top-left-radius: 180px;
+  border-bottom-left-radius: 180px; */
   animation: fadeInRight 1s ease-out;
   z-index: 1;
 }
@@ -513,15 +513,15 @@ footer img {
   }
   
   .porcofinal2-img {
-    max-width: 52%; /* só ocupa o espaço restante */
+    max-width: 44%; /* só ocupa o espaço restante */
     height: 100%;
     object-fit: cover;
     object-position: left;
     align-self: flex-end;
     margin: 0;
     padding: 0;
-    border-top-left-radius: 100px;
-    border-bottom-left-radius: 100px;
+    /*border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;*/
   }
   .porcofinal2-img::before {
     content: '';
@@ -649,8 +649,8 @@ footer img {
     .section-divider::after {
       border-bottom: 2px solid #021f3b;
     }
-
-      .cta-button {
+    
+    .cta-button {
       background-color: #4f9728;
       color: white;
       padding: 1rem 2.5rem;
@@ -666,5 +666,4 @@ footer img {
       font-size: 14px;
     }
   }
-  
   
