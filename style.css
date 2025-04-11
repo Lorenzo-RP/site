@@ -32,16 +32,16 @@ h1, h2, p {
 
 /* ============ HEADER MOBILE FIRST ============ */
 header.hero-header {
-  background-color: #021f3b;
-  color: white;
-  border-bottom: 4px solid orange;
-  padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  padding: 20px 40px;
+  background-color: #021f3b;
+  border-bottom: 4px solid orange;
   position: relative;
-  min-height: 420px;
+  overflow: hidden;
+  flex-wrap: wrap;
+  min-height: 220px;
 }
 
 .logo-img {
@@ -53,24 +53,29 @@ header.hero-header {
 
 .header-content {
   flex: 1;
-  text-align: left; /* centraliza entre logo e imagem */
+  color: white;
+  padding-right: 35%; /* espaço reservado pra imagem da direita */
+  z-index: 2;
 }
 
 .porcofinal2-img {
+  position: absolute;
+  right: 0;
+  bottom: 0; /* gruda na borda laranja */
   max-width: 35%;
-  height: auto;
-  margin-left: auto; /* empurra pra direita */
+  height: 100%;
+  object-fit: cover;
   border-top-left-radius: 180px;
   border-bottom-left-radius: 180px;
-  overflow: hidden;
   animation: fadeInRight 1s ease-out;
+  z-index: 1;
 }
+
+
 
 .porcofinal2-img::before {
   content: '';
-  position: absolute;
   left: 0;
-  top: 0;
   width: 100px;
   height: 100%;
   background: linear-gradient(to right, rgba(2, 31, 59, 1), rgba(2, 31, 59, 0));
@@ -114,10 +119,9 @@ header.hero-header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: left;
-  text-align: left;
-  gap: 8px;
-  padding: 1rem;
+  gap: 16px; /* espaço entre os balões */
+  margin: 20px auto;
+  max-width: 700px; /* ou o valor que quiser pra limitar a largura */
 }
 
 /* ============ BOTÕES ============ */
@@ -139,37 +143,105 @@ header.hero-header {
 }
 
 /* ============ DEPOIMENTOS ============ */
-.testimonial {
-  background-color: #f2f1f1;
-  border-left: 5px solid #021f3b;
-  margin: 1rem 0;
-  padding: 1rem;
-  animation: fadeIn 1.5s ease-in-out;
+
+.testimonial-lado-a-lado {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 10px;   /* espaçamento em cima */
 }
+
+.relato {
+  flex: 1;
+  min-width: 280px;
+  font-size: 16px;
+  padding: 12px;
+  background-color: #f5faff;
+  border-left: 4px solid orange;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin: 0;
+}
+
+.foto-gerson {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  float: left;
+}
+
+.imagens-porcos {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-end;   /* alinha à direita do container */
+  padding-right: 150px;         /* mais pra esquerda (diminui se quiser mais colado) */
+  margin-top: 15px;
+}
+
+.porcofinal-img {
+  max-width: 160px;            /* aumentamos o tamanho */
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h1, h2, h3, p {
+  font-family: 'Poppins', sans-serif;
+}
+
 
 /* ============ BOLHAS DE DESTAQUE ============ */
+/* Estilização base */
 .highlight-bubble {
-  background-color: rgb(225, 146, 0);
+  background-color: orange;
   color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.6rem 1rem;
-  border-radius: 20px;
-  font-weight: bold;
-  text-transform: capitalize;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-  font-size: 1rem;
-  width: 280px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 10px rgba(248, 240, 240, 0.1);
   text-align: center;
+  flex: 1 1 calc(33.33% - 32px);
+  min-width: 230px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
 }
 
+/* Hover animado com expansão e cor laranja */
 .highlight-bubble:hover {
-  transform: scale(1.1);
+  transform: scale(1.08);
+  background-color: orange;
+  color: white;
+  cursor: pointer;
 }
+
+/* Ativa quando visível na rolagem */
+.highlight-bubble.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
 
 /* ============ SISTEMA ============ */
 .image-sistema {
@@ -181,12 +253,20 @@ header.hero-header {
   margin: 24px 0;
 }
 
+.spacer-xs {
+  display: block;
+  width: 100%;
+  height: 12px;
+}
+
+
+
 .text_sistema {
   flex: 1;
   font-size: 16px;
   padding: 12px;
   background-color: #f5faff;
-  border-left: 4px solid #2196F3;
+  border-left: 4px solid orange;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   min-width: 280px;
@@ -198,14 +278,48 @@ header.hero-header {
   display: flex;
 }
 
-/* ============ BLOCOS PORCOS E FRANGOS ============ */
-.chessboard-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  margin-bottom: 12px;
-  gap: 8px;
+
+.caixazulg {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
 }
+
+
+.bloco-lado-a-lado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.bloco-lado-a-lado.reverse {
+  flex-direction: row-reverse;
+}
+
+.imagem-sistema-lado {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 280px;
+}
+
+
+
+
+
+
+
+
+
+/* ============ BLOCOS PORCOS E FRANGOS ============ */
+
 
 .img-porcos img {
   max-width: 160px;
@@ -218,16 +332,10 @@ header.hero-header {
   max-width: 90%;
   width: 100%;
   border-radius: 12px;
+  margin-top: -30px;   /* espaçamento em cima */
 }
 
-.text-porcos,
-.text-frangos,
-.text_sistema {
-  padding: 8px;
-  font-size: 15px;
-  margin-left: 8px;
-  flex: 1;
-}
+
 
 .text-porcos {
   background-color: #f0f8ff;
@@ -248,12 +356,7 @@ header.hero-header {
   flex-wrap: wrap;
 }
 
-.porcofinal-img {
-  max-width: 300px;
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
+
 
 /* ============ RODAPÉ ============ */
 footer {
@@ -324,8 +427,8 @@ footer img {
   line-height: 50px; /* igual à altura */
   padding: 0 20px;
   border-radius: 10px;
-  width: 220px;
-  height: 50px;
+  width: 100%;
+  height: 100%;
   text-align: center;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   font-family: 'Poppins', sans-serif;
@@ -343,8 +446,8 @@ footer img {
   font-size: 18px;
   padding: 10px 20px;
   border-radius: 10px;
-  width: 220px;
-  height: 50px;
+  width: 100%;
+  height: 100%;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   font-family: 'Poppins', sans-serif;
 }
@@ -356,8 +459,8 @@ footer img {
   font-size: 18px;
   padding: 10px 20px;
   border-radius: 10px;
-  width: 220px;
-  height: 50px;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;        /* Alinha verticalmente */
   justify-content: center;    /* Alinha horizontalmente */
@@ -366,6 +469,45 @@ footer img {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   font-family: 'Poppins', sans-serif;
 }
+
+
+
+/* Animações base */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  text-align: left !important;
+}
+
+/* Animação mais lenta ou suave */
+.reveal-slow {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 1.2s ease-out;
+}
+
+.reveal-slow.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -382,12 +524,17 @@ footer img {
     font-family: 'Poppins', sans-serif !important;
   }
   
-
+  .container {
+    overflow: visible; /* permite que o balão ultrapasse */
+    position: relative; /* necessário se você usa position: absolute dentro */
+  }
+  
   html, body {
     font-family: 'Poppins', sans-serif !important;
     margin: 0;
     padding: 0;
     height: 100%;
+    width: 100%;
   }
 
   header.hero-header {
@@ -405,9 +552,8 @@ footer img {
     overflow: hidden;
   }
   
-  
   .porcofinal2-img {
-    max-width: 95%; /* só ocupa o espaço restante */
+    max-width: 52%; /* só ocupa o espaço restante */
     height: 100%;
     object-fit: cover;
     object-position: left;
@@ -416,6 +562,16 @@ footer img {
     padding: 0;
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
+  }
+  .porcofinal2-img::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(2, 31, 59, 1), rgba(2, 31, 59, 0));
+    z-index: 2;
   }
   
   .logo-img {
@@ -431,82 +587,87 @@ footer img {
     display: none;
   }
 
+  .testimonial-lado-a-lado {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-top: 10px;   /* espaçamento em cima */
+    }
+  
+    .relato {
+      text-align: left;
+      margin-bottom: 20px;
+      width: 100%;
+    }
+  
+    .foto-gerson {
+      float: none;
+      display: block;
+      margin: 0 auto 10px;
+    }
+  
+    .imagens-porcos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;        /* volta pra wrap, assim ele se adapta melhor no mobile */
+      gap: 20px;
+      width: 100%;
+      margin-top: -45px;
+      padding: 0 10px;        /* protege das bordas */
+      box-sizing: border-box; /* garante que padding conte no tamanho total */
+    }
+    
+    .porcofinal-img {
+      width: 45%;              /* 45 + 45 + 10 (gap) = 100% aprox */
+      max-width: 500px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    
+    
+    
+  
   
 
-  .porcofinal-img {
-    max-width: 43%;
-    width: 100%;
-    border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
+    .image-sistema-img {
+      max-width: 90%;
+      margin: 0 auto;              /* Centraliza horizontalmente */
+      display: block;              /* block necessário para margin auto funcionar */
+      border-radius: 16px;         /* Borda arredondada */
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra opcional pra destacar */
+      margin-top: -45px;   /* espaçamento em cima */
+    }
 
-}
-
-.image-sistema-img {
-  max-width: 80%;
-  margin: 0 auto;              /* Centraliza horizontalmente */
-  display: block;              /* block necessário para margin auto funcionar */
-  border-radius: 16px;         /* Borda arredondada */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* sombra opcional pra destacar */
-}
-
-.img-frangos img {
-  max-width: 80%;
-  width: 90%;
-  margin: 0 auto;
-  display: block;        /* Necessário pra margin auto funcionar */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* opcional pra dar destaque */
+    .speech-bubble,
+    .speech-bubblemonitor,
+    .speech-bubblecli {
+      position: relative;
+      background-color: #021f3b;
+      color: white;
+      font-size: 18px;
+      padding: 10px 20px;
+      border-radius: 1px;
+      height: 50px;
+      width: 100%; /* Agora ocupa toda a largura do container */
+      text-align: center;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-sizing: border-box; /* Garante que o padding seja incluído no tamanho total */
+    }
+    .caixazulg {
+      display: block;
+      width: 90%;
+      max-width: 400px;
+      height: auto;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+    }
   
-}
-
-.speech-bubble {
-  position: relative;
-  background-color: #021f3b;
-  color: white;
-  font-size: 18px;
-  line-height: 50px; /* igual à altura */
-  padding: 0 20px;
-  border-radius: 10px;
-  width: 220px;
-  height: 50px;
-  text-align: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Poppins', sans-serif;
-}
-
-
-.speech-bubblemonitor {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px; /* espaço entre ícone e texto */
-  position: relative;
-  background-color: #021f3b;
-  color: white;
-  font-size: 18px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  width: 220px;
-  height: 50px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Poppins', sans-serif;
-}
-
-.speech-bubblecli {
-  position: relative;
-  background-color: #021f3b;
-  color: white;
-  font-size: 18px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  width: 220px;
-  height: 50px;
-  display: flex;
-  align-items: center;        /* Alinha verticalmente */
-  justify-content: center;    /* Alinha horizontalmente */
-  gap: 8px;                   /* Espaço entre ícone e texto */
-  text-align: center;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Poppins', sans-serif;
-}
