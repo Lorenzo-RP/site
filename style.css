@@ -190,20 +190,6 @@ header.hero-header {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 h1, h2, h3, p {
   font-family: 'Poppins', sans-serif;
 }
@@ -310,16 +296,7 @@ h1, h2, h3, p {
   min-width: 280px;
 }
 
-
-
-
-
-
-
-
-
 /* ============ BLOCOS PORCOS E FRANGOS ============ */
-
 
 .img-porcos img {
   max-width: 160px;
@@ -334,7 +311,6 @@ h1, h2, h3, p {
   border-radius: 12px;
   margin-top: -30px;   /* espaçamento em cima */
 }
-
 
 
 .text-porcos {
@@ -416,7 +392,6 @@ footer img {
 .benefit-item:hover {
   transform: scale(1.03);
 }
-
 
 
 .speech-bubble {
