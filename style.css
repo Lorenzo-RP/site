@@ -186,6 +186,31 @@ header.hero-header {
   margin-top: 15px;
 }
 
+.imagem-tratada {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-end;   /* alinha à direita do container */
+  padding-right: 0px;         /* mais pra esquerda (diminui se quiser mais colado) */
+  margin-top: 15px;
+  height: 200px !important;
+}
+
+.imagem-trata {
+  border-radius: 6% !important;
+  height: 200px !important;
+  transform: translateY(13px);
+  
+  
+}
+
+.balao-azul {
+  background-color: #021f3b; /* azul escuro */
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 .porcofinal-img {
   max-width: 160px;            /* aumentamos o tamanho */
   border-radius: 10px;
