@@ -49,6 +49,7 @@ header.hero-header {
   height: auto;
   margin-right: 1rem;
   flex-shrink: 0;
+  margin-top: -10px !important; /* Move a logo 10px para cima */
 }
 
 .header-content {
@@ -116,6 +117,7 @@ header.hero-header {
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
+  
 }
 
 .center {
@@ -190,22 +192,26 @@ header.hero-header {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: flex-end;   /* alinha à direita do container */
-  padding-right: 0px;         /* mais pra esquerda (diminui se quiser mais colado) */
+  justify-content: flex-end;
+  padding-right: 0px;
   margin-top: 15px;
   height: 200px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9); /* sombra suave */
 }
 
 .imagem-trata {
   border-radius: 6% !important;
   height: 200px !important;
   transform: translateY(13px);
-  
-  
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9); /* sombra suave */
+  position: relative;
+  overflow: hidden;
 }
 
+
+
 .balao-azul {
-  background-color: #021f3b; /* azul escuro */
+  background-color: #73a0cb00; /* azul escuro */
   padding: 20px;
   border-radius: 12px;
   margin-top: 20px;
@@ -292,6 +298,20 @@ h1, h2, h3, p {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   min-width: 280px;
   margin: 0;
+
+}
+.textdois {
+  flex: 1;
+  margin-top: 100px !important;
+  font-size: 16px;
+  padding: 12px;
+  background-color: #f5faff;
+  border-left: 4px solid orange;
+  border-radius: 0px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  min-width: 280px;
+  margin: 0;
+
 }
 
 .textsistema2 {
@@ -337,13 +357,14 @@ h1, h2, h3, p {
 }
 .caixazulg2 {
   display: block;
-  width: 75% !important;
-  max-width: 400px;
+  width: 100% !important;      /* Ocupará 100% do elemento pai */
+  max-width: none !important;  /* Remove o limite de 400px */
   height: auto;
   margin-bottom: 6px;
   margin: 10px;
   border-radius: 4px;
 }
+
 
 .caixazulg3 {
   display: block;
@@ -589,6 +610,7 @@ footer img {
     max-width: 200px;
     height: auto;
     align-self: flex-end;
+    margin-top: -9px !important; /* Move a logo 10px para cima */
   }
 
   .porcofinal2-img {
@@ -632,6 +654,22 @@ footer img {
     display: block;
     margin: 0 auto 10px;
   }
+
+  .textdois {
+    flex: 1;
+    margin-top: 0px !important;
+    font-size: 16px;
+    padding: 12px;
+    background-color: #f5faff;
+    border-left: 4px solid orange;
+    border-radius: 0px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    min-width: 280px;
+    margin: 0;
+  
+  }
+
+
 
   .imagens-porcos {
     display: flex;
@@ -740,7 +778,11 @@ footer img {
     text-align: left;
     padding: 10px 20px;
     font-size: 14px;
+    margin-top: 20px;
   }
+
+
+  
 
   .highlight-bubble {
     flex: 1 1 calc(50% - 10px);
