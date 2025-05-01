@@ -49,7 +49,7 @@ header.hero-header {
   height: auto;
   margin-right: 1rem;
   flex-shrink: 0;
-  margin-top: -10px !important; /* Move a logo 10px para cima */
+  margin-top: 0px !important; /* Move a logo 10px para cima */
 }
 
 .header-content {
@@ -380,7 +380,7 @@ h1, h2, h3, p {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  gap: 20px;
+  gap: 0px;
 }
 
 
@@ -609,9 +609,10 @@ footer img {
   .logo-img {
     max-width: 200px;
     height: auto;
-    align-self: flex-end;
-    margin-top: -9px !important; /* Move a logo 10px para cima */
+    position: relative;
+    top: -32px;
   }
+  
 
   .porcofinal2-img {
     max-width: 44%;
