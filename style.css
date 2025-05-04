@@ -165,10 +165,13 @@ header.hero-header {
   font-size: 16px;
   padding: 12px;
   background-color: #f5faff;
-  border-left: 4px solid orange;
+  border-left: 5px solid orange;
+  border-right: 5px solid orange;
+  border-top: 5px solid orange;
+  border-bottom: 5px solid orange;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  margin: 0;
+  margin-top: 80px;
 }
 
 .foto-gerson {
@@ -376,6 +379,14 @@ h1, h2, h3, p {
 }
 
 
+
+.fundo-azul {
+  background-color:#021f3b;
+  color: white;
+  padding: 20px;
+}
+
+
 .bloco-lado-a-lado {
   display: flex;
   flex-wrap: wrap;
@@ -435,7 +446,7 @@ h1, h2, h3, p {
 
 /* ============ RODAPÉ ============ */
 footer {
-  background-color: #021f3b;
+  background-color: #FF9800;
   color: white;
   text-align: center;
   font-size: 0.9rem;
@@ -444,6 +455,7 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-top: 5px solid #c17502ef; /* laranja mais escuro */
 }
 
 footer img {
@@ -504,6 +516,20 @@ footer img {
   font-weight: bold;
 }
 
+.section-divisao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 40px 0 20px;
+  gap: 0.5rem;
+  font-size: 24px;        /* aplica tamanho uniforme */
+  color: white !important;         /* cor aplicada no container inteiro */
+  font-weight: bold;
+}
+
+
+
 .section-divider::before,
 .section-divider::after {
   content: "";
@@ -524,6 +550,31 @@ footer img {
 }
 
 .section-divider i {
+  display: flex;
+  align-items: center;
+}
+
+
+.section-divisao::before,
+.section-divisao::after {
+  content: "";
+  flex: 1;
+  border-bottom: 3px solid white;
+}
+
+.section-divisao::before {
+  margin-right: 1rem;
+}
+
+.section-divisao::after {
+  margin-left: 1rem;
+}
+
+.section-divisao span {
+  white-space: nowrap;
+}
+
+.section-divisao i {
   display: flex;
   align-items: center;
 }
@@ -648,7 +699,9 @@ footer img {
     text-align: left;
     margin-bottom: 20px;
     width: 100%;
+    color: black !important;
   }
+  
 
   .foto-gerson {
     float: none;
