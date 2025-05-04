@@ -692,14 +692,19 @@ footer img {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 10px;
-  }
+
+    position: relative; /* ou absolute, conforme o layout */
+    top: -40px; /* sobe 20 pixels */
+}
+
+  
 
   .relato {
     text-align: left;
     margin-bottom: 20px;
     width: 100%;
     color: black !important;
+    
   }
   
 
@@ -862,4 +867,6 @@ footer img {
   .colaborador img {
     width: 30%;
   }
+ 
+  
 }
